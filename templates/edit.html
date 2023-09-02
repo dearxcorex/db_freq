@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/update/{{frequencies.id}}" method="post">
+
+        <div class="mb-3">
+            <label for="frequencies" class="form-label">Frequency</label>
+            <input type="text" class="form-control" id="freq" name="freq"  value="{{frequencies.freq}}">
+        </div>
+        <div class="mb-3">
+            <label for="institution" class="form-label">Institution</label>
+            <input type="text" class="form-control" id="institution" name="institution"  value="{{frequencies.institution}}">
+        </div>
+        <div class="mb-3">
+            <label for="usage" class="form-label">Usage</label>
+            <input type="text" class="form-control" id="usage" name="usage"  value="{{frequencies.usage}}"">
+        </div>
+        <input type = "submit" value = "update" class="btn btn-primary mb-3"/>
+    </form>
+
+{% endblock content %}

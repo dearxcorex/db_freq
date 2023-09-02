@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <a href="/addnew" class="btn btn-primary">Add New</a>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    
+                    <th>Frequency</th>
+                    <th>institution</th>
+                    <th>usage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+       
+        <tbody>
+            {% for frequency in frequencies %}
+            <tr>
+                
+                <td>{{ frequency.freq}}</td>
+                <td>{{ frequency.institution }}</td>
+                <td>{{ frequency.usage }}</td> 
+                <td>
+                    <a href="edit/{{ frequency.id }}" class="btn btn-success">Edit</a> | <a href="delete/{{ frequency.id }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    </div>
+</div>
+
+
+
+{% endblock content%}
+
+
